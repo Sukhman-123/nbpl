@@ -128,7 +128,7 @@ const Index = () => {
             Don't Miss Your Chance!
           </h3>
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
-            Register today and be part of the most electrifying cricket tournament in Narsingh Bandh!
+            Registration will open soon. Soon be part of the most electrifying cricket tournament in Burnpur!
           </p>
           <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
             PLAYERS AUCTION COMING SOON
