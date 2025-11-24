@@ -45,6 +45,25 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground font-medium">TEAMS ONLY</p>
                 </div>
               </div>
+              
+              <div className="bg-background/50 backdrop-blur-sm rounded-xl p-6 mb-6 border border-border">
+                <h3 className="text-lg font-bold text-foreground mb-4 text-center">Contact for Registration</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
+                    <p className="font-bold text-foreground text-lg">Nicky</p>
+                    <p className="text-muted-foreground text-sm">7001335425</p>
+                  </div>
+                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
+                    <p className="font-bold text-foreground text-lg">Ricky</p>
+                    <p className="text-muted-foreground text-sm">6297984477</p>
+                  </div>
+                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
+                    <p className="font-bold text-foreground text-lg">Sukhman</p>
+                    <p className="text-muted-foreground text-sm">8972850560</p>
+                  </div>
+                </div>
+              </div>
+
               <Button variant="booking" size="lg" className="text-lg md:text-xl px-12 py-6 h-auto">
                 REGISTER YOUR TEAM NOW
               </Button>
