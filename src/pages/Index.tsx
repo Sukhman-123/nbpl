@@ -15,20 +15,20 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-80" />
         
-        <div className="relative container mx-auto px-4 py-16 md:py-24">
-          <div className="flex flex-col items-center text-center space-y-8">
+        <div className="relative container mx-auto px-4 py-12 md:py-20">
+          <div className="flex flex-col items-center text-center space-y-6">
             <img 
               src={nbplLogo} 
               alt="NBPL Logo" 
-              className="w-32 h-32 md:w-48 md:h-48 animate-pulse"
+              className="w-40 h-40 md:w-56 md:h-56 animate-pulse"
             />
             
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-7xl font-black text-foreground tracking-tight">
+              <h1 className="text-5xl md:text-8xl font-black text-foreground tracking-tight leading-tight">
                 NARSINGH BANDH<br />PREMIER LEAGUE
               </h1>
-              <div className="inline-block bg-cricket-gold px-6 py-2 rounded-lg shadow-glow-secondary">
-                <p className="text-2xl md:text-4xl font-bold text-background">SEASON 3</p>
+              <div className="inline-block bg-cricket-gold px-8 py-3 rounded-lg shadow-glow-secondary">
+                <p className="text-3xl md:text-5xl font-bold text-background">SEASON 3</p>
               </div>
             </div>
 
