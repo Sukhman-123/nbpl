@@ -20,15 +20,15 @@ const Index = () => {
             <img 
               src={nbplLogo} 
               alt="NBPL Logo" 
-              className="w-40 h-40 md:w-56 md:h-56 animate-pulse"
+              className="w-32 h-32 md:w-44 md:h-44 animate-pulse"
             />
             
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-8xl font-black text-foreground tracking-tight leading-tight">
+              <h1 className="text-4xl md:text-6xl font-black text-foreground tracking-tight leading-tight">
                 NARSINGH BANDH<br />PREMIER LEAGUE
               </h1>
-              <div className="inline-block bg-cricket-gold px-8 py-3 rounded-lg shadow-glow-secondary">
-                <p className="text-3xl md:text-5xl font-bold text-background">SEASON 3</p>
+              <div className="inline-block bg-cricket-gold px-6 py-2 rounded-lg shadow-glow-secondary">
+                <p className="text-2xl md:text-4xl font-bold text-background">SEASON 3</p>
               </div>
             </div>
 
@@ -128,10 +128,10 @@ const Index = () => {
             Don't Miss Your Chance!
           </h3>
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
-            Register your team today and be part of the most electrifying cricket tournament in Narsingh Bandh!
+            Register today and be part of the most electrifying cricket tournament in Narsingh Bandh!
           </p>
           <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
-            BOOK YOUR TEAM SLOT
+            PLAYERS AUCTION COMING SOON
           </Button>
         </div>
       </div>
