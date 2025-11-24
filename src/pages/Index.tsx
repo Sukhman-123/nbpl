@@ -128,10 +128,10 @@ const Index = () => {
             Don't Miss Your Chance!
           </h3>
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
-            Register your team today and be part of the most electrifying cricket tournament in Narsingh Bandh!
+            Calling all players! Get ready to showcase your skills in the most electrifying cricket tournament in Narsingh Bandh!
           </p>
           <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
-            BOOK YOUR TEAM SLOT
+            PLAYERS AUCTION COMING SOON
           </Button>
         </div>
       </div>
