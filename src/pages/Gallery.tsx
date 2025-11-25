@@ -117,12 +117,13 @@ const Gallery = () => {
                   <img
                     src={image.url}
                     alt={image.title}
-                    className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-110 ${
+                    className={`w-full h-full object-contain transition-all duration-300 group-hover:scale-110 ${
                       imageLoaded[image.id] ? 'opacity-100' : 'opacity-0'
                     }`}
                     onLoad={() => setImageLoaded(prev => ({ ...prev, [image.id]: true }))}
                     onError={(e) => {
-                      e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage Unavailable%3C/text%3E%3C/svg%3E';
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage Unavailable%3C/text%3E%3C/svg%3E';
                       setImageLoaded(prev => ({ ...prev, [image.id]: true }));
                     }}
                   />
@@ -188,7 +189,7 @@ const Gallery = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in {
           from {
             opacity: 0;
