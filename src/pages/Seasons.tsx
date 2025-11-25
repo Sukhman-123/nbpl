@@ -10,15 +10,15 @@ const Seasons = () => {
     "1": {
       year: "2023",
       winner: "Sunny Strikers",
-      teams: 8,
-      matches: 16,
+      teams: 6,
+      matches: 19,
       status: "Completed",
     },
     "2": {
       year: "2024",
       winner: "NMCC Titans",
-      teams: 8,
-      matches: 16,
+      teams: 6,
+      matches: 19,
       status: "Completed",
     },
     "3": {
