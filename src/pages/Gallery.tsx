@@ -12,57 +12,62 @@ const Gallery = () => {
     {
       id: "1LLzodCPMRs_TLRZdt3D5A_fkqWK-yjD8",
       category: "Match Highlights",
-      title: "Action Shot 1"
+      title: "Final Ceremony"
     },
     {
       id: "1NzqZBF6ZL2rVo-f-0zMAUG0rZavQy9KB",
       category: "Match Highlights",
-      title: "Action Shot 2"
+      title: "Team: NMCC Titans"
     },
     {
       id: "1vLMEDgC-p2i_h9qy5nBwFgkvgOEM2AUh",
       category: "Team Photos",
-      title: "Team Portrait 1"
+      title: "MOTM - 1"
     },
     {
       id: "1xUjtyqQMEN3iQ7v0QiHZ77w3p1YcMM37",
       category: "Team Photos",
-      title: "Team Portrait 2"
+      title: "MOTM - 2"
     },
     {
       id: "15kg8DD4k-P4q6K5_nHCli2FaC1uMdLie",
       category: "Celebrations",
-      title: "Victory Moment 1"
+      title: "MOTM - 3"
     },
     {
       id: "1BYrRN2TGU04JRK_A_yrBvy3hcH8wOiqG",
       category: "Celebrations",
-      title: "Victory Moment 2"
+      title: "MOTM - 4"
     },
     {
       id: "1MVO3gx9AMMKSiH66zvE58DL63Zt7fpOG",
       category: "Match Highlights",
-      title: "Action Shot 3"
+      title: "Team: Ishan Mavericks"
     },
     {
       id: "1_C8K2meLwMrGwXkN49dvTwcppWlD3EgW",
       category: "Team Photos",
-      title: "Team Portrait 3"
+      title: "MOTM - 5"
     },
     {
       id: "1imvlTlNeVCpad4gQfHXTIzNOkHif33R4",
       category: "Match Highlights",
-      title: "Action Shot 4"
+      title: "MOTM - 6"
     },
     {
       id: "1uYdBCSG9wxwr3FBaj4iJKiwnfnOMui6a",
       category: "Celebrations",
-      title: "Victory Moment 3"
+      title: "Team: Neemtala Ninjas"
     },
     {
       id: "1vC9wXPK4ROXMflo8CvS2OfZMrJ_97wlU",
       category: "Match Highlights",
-      title: "Action Shot 5"
+      title: "MOTM - 7"
+    },
+    {
+      id: "1lkaZ6Sw_0QtGmXA5oUvTysbkXGG28B8n",
+      category: "Team Photos",
+      title: "Team: Sunny Strikers"
     }
   ].map(img => ({
     ...img,
