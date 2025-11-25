@@ -158,9 +158,15 @@ const Index = () => {
             Registration will open soon. Soon be part of the most electrifying cricket tournament in Burnpur!
           </p>
           <div className="flex justify-center">
-            <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
-              PLAYERS AUCTION COMING SOON
-            </Button>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
+                CLICK FOR PLAYER REGISTERATION
+              </Button>
+            </a>
           </div>
         </div>
       </div>
