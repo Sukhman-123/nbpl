@@ -166,11 +166,21 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-card py-8 border-t border-border">
+      <footer className="bg-card py-8 border-t border-border mt-16">
         <div className="container mx-auto px-4 text-center">
-          <img src={nbplLogo} alt="NBPL" className="w-16 h-16 mx-auto mb-4" />
           <p className="text-muted-foreground">
             © 2025 Narsingh Bandh Premier League. All rights reserved.
+          </p>
+          <p className="text-muted-foreground text-sm mt-2">
+            Developer - Sukhman Hundal | Instagram:{" "}
+            <a
+              href="https://www.instagram.com/sukhman.hundal_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cricket-blue hover:underline"
+            >
+              @sukhman.hundal_
+            </a>
           </p>
         </div>
       </footer>
