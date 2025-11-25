@@ -1,12 +1,16 @@
+import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CopyButton } from "@/components/CopyButton";
 import nbplLogo from "@/assets/nbpl-logo.png";
 import cricketHero from "@/assets/cricket-hero.jpg";
-import { Trophy, Users, Calendar, MapPin } from "lucide-react";
+import { Trophy, Users, Calendar, MapPin, Mail } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div 
@@ -48,18 +52,39 @@ const Index = () => {
               
               <div className="bg-background/50 backdrop-blur-sm rounded-xl p-6 mb-6 border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-4 text-center">Contact for Registration</h3>
+                
+                <div className="mb-4 flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
+                  <div className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-primary" />
+                    <p className="font-bold text-foreground">Official Email</p>
+                  </div>
+                  <div className="flex items-center mt-1">
+                    <p className="text-muted-foreground text-sm">nbucplcricket@gmail.com</p>
+                    <CopyButton text="nbucplcricket@gmail.com" label="Email" />
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
                     <p className="font-bold text-foreground text-lg">Nicky</p>
-                    <p className="text-muted-foreground text-sm">7001335425</p>
+                    <div className="flex items-center">
+                      <p className="text-muted-foreground text-sm">7001335425</p>
+                      <CopyButton text="7001335425" label="Phone" />
+                    </div>
                   </div>
                   <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
                     <p className="font-bold text-foreground text-lg">Ricky</p>
-                    <p className="text-muted-foreground text-sm">6297984477</p>
+                    <div className="flex items-center">
+                      <p className="text-muted-foreground text-sm">6297984477</p>
+                      <CopyButton text="6297984477" label="Phone" />
+                    </div>
                   </div>
                   <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
                     <p className="font-bold text-foreground text-lg">Sukhman</p>
-                    <p className="text-muted-foreground text-sm">8972850560</p>
+                    <div className="flex items-center">
+                      <p className="text-muted-foreground text-sm">8972850560</p>
+                      <CopyButton text="8972850560" label="Phone" />
+                    </div>
                   </div>
                 </div>
               </div>
