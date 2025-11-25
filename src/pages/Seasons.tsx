@@ -9,14 +9,14 @@ const Seasons = () => {
   const seasonData = {
     "1": {
       year: "2023",
-      winner: "Coming Soon",
+      winner: "Ishan Mavericks",
       teams: 8,
       matches: 16,
       status: "Completed",
     },
     "2": {
       year: "2024",
-      winner: "Coming Soon",
+      winner: "NMCC Titans",
       teams: 8,
       matches: 16,
       status: "Completed",
