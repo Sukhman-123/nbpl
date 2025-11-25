@@ -89,9 +89,11 @@ const Index = () => {
                 </div>
               </div>
 
-              <Button variant="booking" size="lg" className="text-lg md:text-xl px-12 py-6 h-auto">
-                REGISTER YOUR TEAM NOW
-              </Button>
+              <div className="flex justify-center">
+                <Button variant="booking" size="lg" className="text-lg md:text-xl px-12 py-6 h-auto">
+                  REGISTER YOUR TEAM NOW
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -155,9 +157,11 @@ const Index = () => {
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
             Registration will open soon. Soon be part of the most electrifying cricket tournament in Burnpur!
           </p>
-          <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
-            PLAYERS AUCTION COMING SOON
-          </Button>
+          <div className="flex justify-center">
+            <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
+              PLAYERS AUCTION COMING SOON
+            </Button>
+          </div>
         </div>
       </div>
 
