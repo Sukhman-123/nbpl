@@ -11,6 +11,42 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
+      {/* Mobile Navigation Bar - Visible only on mobile */}
+      <div className="lg:hidden bg-card border-b border-border sticky top-0 z-40">
+        <div className="container mx-auto px-2 py-3">
+          <div className="flex justify-around items-center gap-1">
+            <a 
+              href="#home" 
+              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
+            >
+              <Trophy className="w-5 h-5 text-primary mb-1" />
+              <span className="text-xs font-medium text-foreground">Home</span>
+            </a>
+            <a 
+              href="#teams" 
+              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
+            >
+              <Users className="w-5 h-5 text-primary mb-1" />
+              <span className="text-xs font-medium text-foreground">Teams</span>
+            </a>
+            <a 
+              href="#schedule" 
+              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
+            >
+              <Calendar className="w-5 h-5 text-primary mb-1" />
+              <span className="text-xs font-medium text-foreground">Schedule</span>
+            </a>
+            <a 
+              href="#contact" 
+              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
+            >
+              <Mail className="w-5 h-5 text-primary mb-1" />
+              <span className="text-xs font-medium text-foreground">Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <div className="relative overflow-hidden">
