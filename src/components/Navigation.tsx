@@ -18,6 +18,11 @@ const seasons = [
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const toggleDropdown = (dropdown: string) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -145,46 +150,85 @@ export const Navigation = () => {
               Home
             </Link>
             
+            {/* Seasons Dropdown */}
             <div className="px-4 py-2">
-              <div className="text-sm font-medium text-muted-foreground mb-2">Seasons</div>
-              {seasons.map((season) => (
-                <Link
-                  key={season.path}
-                  to={season.path}
-                  className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {season.name}
-                </Link>
-              ))}
+              <button
+                onClick={() => toggleDropdown('seasons')}
+                className="flex items-center justify-between w-full text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span>Seasons</span>
+                <ChevronDown 
+                  className={`h-4 w-4 transition-transform ${openDropdown === 'seasons' ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {openDropdown === 'seasons' && (
+                <div className="mt-2 space-y-1">
+                  {seasons.map((season) => (
+                    <Link
+                      key={season.path}
+                      to={season.path}
+                      className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {season.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
+            {/* Players Dropdown */}
             <div className="px-4 py-2">
-              <div className="text-sm font-medium text-muted-foreground mb-2">Players</div>
-              {seasons.map((season) => (
-                <Link
-                  key={season.path}
-                  to={`/players${season.path.replace("/seasons", "")}`}
-                  className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {season.name}
-                </Link>
-              ))}
+              <button
+                onClick={() => toggleDropdown('players')}
+                className="flex items-center justify-between w-full text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span>Players</span>
+                <ChevronDown 
+                  className={`h-4 w-4 transition-transform ${openDropdown === 'players' ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {openDropdown === 'players' && (
+                <div className="mt-2 space-y-1">
+                  {seasons.map((season) => (
+                    <Link
+                      key={season.path}
+                      to={`/players${season.path.replace("/seasons", "")}`}
+                      className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {season.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
+            {/* Teams & Owners Dropdown */}
             <div className="px-4 py-2">
-              <div className="text-sm font-medium text-muted-foreground mb-2">Teams & Owners</div>
-              {seasons.map((season) => (
-                <Link
-                  key={season.path}
-                  to={`/teams${season.path.replace("/seasons", "")}`}
-                  className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {season.name}
-                </Link>
-              ))}
+              <button
+                onClick={() => toggleDropdown('teams')}
+                className="flex items-center justify-between w-full text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span>Teams & Owners</span>
+                <ChevronDown 
+                  className={`h-4 w-4 transition-transform ${openDropdown === 'teams' ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {openDropdown === 'teams' && (
+                <div className="mt-2 space-y-1">
+                  {seasons.map((season) => (
+                    <Link
+                      key={season.path}
+                      to={`/teams${season.path.replace("/seasons", "")}`}
+                      className="block pl-4 py-2 rounded-md hover:bg-accent text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {season.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <Link
