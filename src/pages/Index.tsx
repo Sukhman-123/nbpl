@@ -17,21 +17,21 @@ const Index = () => {
         <div className="container mx-auto px-2 py-3">
           <div className="flex justify-around items-center gap-1">
             <a 
-              href="#/" 
+              href="/" 
               className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
             >
               <Trophy className="w-5 h-5 text-primary mb-1" />
               <span className="text-xs font-medium text-foreground">Home</span>
             </a>
             <a 
-              href="#/gallery" 
+              href="/gallery" 
               className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
             >
               <Users className="w-5 h-5 text-primary mb-1" />
               <span className="text-xs font-medium text-foreground">Gallery</span>
             </a>
             <a 
-              href="#/contact" 
+              href="/contact" 
               className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
             >
               <Mail className="w-5 h-5 text-primary mb-1" />
