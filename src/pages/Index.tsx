@@ -39,7 +39,7 @@ const Index = () => {
 
             <div className="bg-card/90 backdrop-blur-sm border-2 border-cricket-orange rounded-2xl p-8 md:p-12 max-w-3xl w-full shadow-glow-secondary">
               <div className="flex justify-center mb-5">
-                
+                <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
                   target="_blank"
                   rel="noopener noreferrer"
