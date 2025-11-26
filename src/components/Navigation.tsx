@@ -3,15 +3,12 @@ import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import nbplLogo from "@/assets/nbpl-logo.png";
-import { cn } from "@/lib/utils";
 
 const seasons = [
   { name: "Season 1", path: "/seasons/1" },
@@ -34,90 +31,77 @@ export const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link to="/">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Home
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+          <div className="hidden lg:flex items-center gap-4">
+            <Link to="/">
+              <Button variant="ghost" className="font-medium">
+                Home
+              </Button>
+            </Link>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Seasons</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-3 p-4 bg-popover">
-                    {seasons.map((season) => (
-                      <li key={season.path}>
-                        <Link to={season.path}>
-                          <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">
-                              {season.name}
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="inline-flex items-center gap-1 font-medium">
+                  Seasons
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="z-50 min-w-[200px]">
+                {seasons.map((season) => (
+                  <DropdownMenuItem asChild key={season.path}>
+                    <Link to={season.path}>{season.name}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Players</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-3 p-4 bg-popover">
-                    {seasons.map((season) => (
-                      <li key={season.path}>
-                        <Link to={`/players${season.path.replace("/seasons", "")}`}>
-                          <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">
-                              {season.name}
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="inline-flex items-center gap-1 font-medium">
+                  Players
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="z-50 min-w-[200px]">
+                {seasons.map((season) => (
+                  <DropdownMenuItem asChild key={season.path}>
+                    <Link to={`/players${season.path.replace("/seasons", "")}`}>
+                      {season.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Teams & Owners</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-3 p-4 bg-popover">
-                    {seasons.map((season) => (
-                      <li key={season.path}>
-                        <Link to={`/teams${season.path.replace("/seasons", "")}`}>
-                          <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">
-                              {season.name}
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="inline-flex items-center gap-1 font-medium">
+                  Teams & Owners
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="z-50 min-w-[220px]">
+                {seasons.map((season) => (
+                  <DropdownMenuItem asChild key={season.path}>
+                    <Link to={`/teams${season.path.replace("/seasons", "")}`}>
+                      {season.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-              <NavigationMenuItem>
-                <Link to="/gallery">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Gallery
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+            <Link to="/gallery">
+              <Button variant="ghost" className="font-medium">
+                Gallery
+              </Button>
+            </Link>
 
-              <NavigationMenuItem>
-                <Link to="/contact">
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Contact Us
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+            <Link to="/contact">
+              <Button variant="ghost" className="font-medium">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
 
           {/* Mobile menu button */}
           <Button

@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CopyButton } from "@/components/CopyButton";
 import nbplLogo from "@/assets/nbpl-logo.png";
 import cricketHero from "@/assets/cricket-hero.jpg";
@@ -37,9 +38,15 @@ const Index = () => {
             </div>
 
             <div className="bg-card/90 backdrop-blur-sm border-2 border-cricket-orange rounded-2xl p-8 md:p-12 max-w-3xl w-full shadow-glow-secondary">
-              <h2 className="text-3xl md:text-5xl font-black text-cricket-orange mb-4 animate-bounce">
-                🏏 TEAM BOOKING NOW OPEN!
-              </h2>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
+                  CLICK FOR PLAYER REGISTERATION
+                </Button>
+              </a>
               <p className="text-xl md:text-2xl text-foreground font-semibold mb-6">
                 Limited Spots Available
               </p>
@@ -157,16 +164,15 @@ const Index = () => {
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
             Registration will open soon. Soon be part of the most electrifying cricket tournament in Burnpur!
           </p>
-          <div className="flex justify-center">
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
-                CLICK FOR PLAYER REGISTERATION
-              </Button>
-            </a>
+          <div className="max-w-4xl mx-auto">
+            <AspectRatio ratio={16 / 9}>
+              <iframe
+                src="https://drive.google.com/file/d/1uzx4TF7V03lmoSYSOp4ZsulpLyH4z5iF/preview"
+                title="NBPL Highlights Video"
+                allow="autoplay; fullscreen"
+                className="h-full w-full rounded-xl border border-border bg-background"
+              />
+            </AspectRatio>
           </div>
         </div>
       </div>
