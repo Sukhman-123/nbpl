@@ -187,7 +187,7 @@ const Index = () => {
           </p>
           <p className="text-muted-foreground text-sm mt-2">
             Developer - Sukhman Hundal | Instagram:{" "}
-            
+            <a
               href="https://www.instagram.com/sukhman.hundal_/"
               target="_blank"
               rel="noopener noreferrer"
