@@ -38,13 +38,14 @@ const Index = () => {
             </div>
 
             <div className="bg-card/90 backdrop-blur-sm border-2 border-cricket-orange rounded-2xl p-8 md:p-12 max-w-3xl w-full shadow-glow-secondary">
-              <div className="flex justify-center mb-5">
+              <div className="flex justify-center mb-5 w-full px-2">
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-full max-w-md"
                 >
-                  <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
+                  <Button variant="tournament" size="lg" className="text-base md:text-lg px-6 md:px-12 py-4 md:py-6 h-auto w-full">
                     CLICK FOR PLAYER REGISTERATION
                   </Button>
                 </a>
