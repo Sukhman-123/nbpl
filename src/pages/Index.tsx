@@ -72,7 +72,7 @@ const Index = () => {
                     <CopyButton text="nbucplcricket@gmail.com" label="Email" />
                   </div>
                 </div>
-
+            
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
                     <p className="font-bold text-foreground text-lg">Nicky</p>
@@ -97,7 +97,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-
+            
               <div className="flex justify-center">
                 <p className="text-2xl md:text-3xl font-bold text-primary">
                   REGISTER YOUR TEAM NOW
