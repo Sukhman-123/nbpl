@@ -42,6 +42,7 @@ const Index = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="mb-5"
               >
                 <Button variant="tournament" size="lg" className="text-lg px-12 py-6 h-auto">
                   CLICK FOR PLAYER REGISTERATION
@@ -97,9 +98,9 @@ const Index = () => {
               </div>
 
               <div className="flex justify-center">
-                <Button variant="booking" size="lg" className="text-lg md:text-xl px-12 py-6 h-auto">
+                <p className="text-2xl md:text-3xl font-bold text-primary">
                   REGISTER YOUR TEAM NOW
-                </Button>
+                </p>
               </div>
             </div>
           </div>
