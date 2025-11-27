@@ -129,9 +129,12 @@ const Index = () => {
               </div>
             
               <div className="flex justify-center">
-                <p className="text-2xl md:text-3xl font-bold text-primary">
+                <button
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeaPIJixU239lXCGyC-shufw5LdiwkCgkFU7glx4p2fJbm3uA/viewform?usp=publish-editor', '_blank')}
+                  className="px-8 py-4 text-2xl md:text-3xl font-bold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors shadow-lg hover:shadow-xl cursor-pointer"
+                >
                   REGISTER YOUR TEAM NOW
-                </p>
+                </button>
               </div>
             </div>
           </div>
