@@ -93,6 +93,10 @@ All colors MUST be HSL.
     --border: 45 15% 85%;
     --input: 45 15% 88%;
     --ring: 142 70% 32%;
+
+    --card-shadow: 0 4px 20px -4px hsl(220 25% 15% / 0.08), 0 8px 32px -8px hsl(220 25% 15% / 0.06);
+    --card-shadow-hover: 0 8px 30px -6px hsl(220 25% 15% / 0.12), 0 12px 40px -10px hsl(220 25% 15% / 0.1);
+    --gradient-card: linear-gradient(145deg, hsl(45 30% 99%), hsl(45 20% 96%));
   }
 
   .dark {
@@ -133,5 +137,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .light .card-enhanced {
+    background: linear-gradient(145deg, hsl(45 30% 99%), hsl(45 20% 96%));
+    box-shadow: 0 4px 20px -4px hsl(220 25% 15% / 0.08), 0 8px 32px -8px hsl(220 25% 15% / 0.06);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .light .card-enhanced:hover {
+    box-shadow: 0 8px 30px -6px hsl(220 25% 15% / 0.12), 0 12px 40px -10px hsl(220 25% 15% / 0.1);
+  }
+
+  .dark .card-enhanced {
+    box-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
   }
 }
