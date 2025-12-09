@@ -223,7 +223,7 @@ const Index = () => {
             © 2025 Narsingh Bandh Premier League. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm mt-2">
-            Developer - Sukhman Hundal | Instagram:{" "}
+            Made with ❤️ by Sukhman Hundal | Instagram:{" "}
             <a
               href="https://www.instagram.com/sukhman.hundal_/"
               target="_blank"
