@@ -10,20 +10,20 @@ const Teams = () => {
   // Placeholder team data - fictional but realistic
   const teamsData: Record<string, { name: string; owner: string; color: string; wins: number; losses: number; isChampion?: boolean; isRunnerUp?: boolean }[]> = {
     "1": [
-      { name: "Sunny Strikers", owner: "Nicky", color: "from-yellow-500 to-orange-500", wins: 5, losses: 1, isChampion: true },
-      { name: "Royal Challengers", owner: "Ricky", color: "from-red-500 to-pink-500", wins: 4, losses: 2, isRunnerUp: true },
-      { name: "NMCC Titans", owner: "Sukhman", color: "from-blue-500 to-cyan-500", wins: 3, losses: 2 },
-      { name: "Thunder Kings", owner: "Raj Kumar", color: "from-purple-500 to-indigo-500", wins: 2, losses: 3 },
-      { name: "Rising Stars", owner: "Amit Verma", color: "from-green-500 to-emerald-500", wins: 2, losses: 4 },
-      { name: "Warriors XI", owner: "Deepak Singh", color: "from-gray-500 to-slate-500", wins: 1, losses: 5 },
+      { name: "Sunny Strikers", owner: "Sunny Shaw", color: "from-yellow-500 to-orange-500", wins: 4, losses: 1, isChampion: true },
+      { name: "NMCC Titans", owner: "Manish Hari", color: "from-red-500 to-pink-500", wins: 4, losses: 1, isRunnerUp: true },
+      { name: "Neemtala Ninjas", owner: "Kaifi", color: "from-blue-500 to-cyan-500", wins: 3, losses: 2 },
+      { name: "Aanvi Warriors", owner: "Nicky", color: "from-purple-500 to-indigo-500", wins: 2, losses: 3 },
+      { name: "Deep Dragons", owner: "Deep Singh", color: "from-green-500 to-emerald-500", wins: 2, losses: 3 },
+      { name: "Trademax Thunder", owner: "Pathak", color: "from-gray-500 to-slate-500", wins: 0, losses: 5 },
     ],
     "2": [
-      { name: "NMCC Titans", owner: "Sukhman", color: "from-blue-500 to-cyan-500", wins: 5, losses: 1, isChampion: true },
-      { name: "Sunny Strikers", owner: "Nicky", color: "from-yellow-500 to-orange-500", wins: 4, losses: 2, isRunnerUp: true },
-      { name: "Royal Challengers", owner: "Ricky", color: "from-red-500 to-pink-500", wins: 4, losses: 2 },
-      { name: "Thunder Kings", owner: "Raj Kumar", color: "from-purple-500 to-indigo-500", wins: 3, losses: 3 },
-      { name: "Rising Stars", owner: "Amit Verma", color: "from-green-500 to-emerald-500", wins: 1, losses: 4 },
-      { name: "Warriors XI", owner: "Deepak Singh", color: "from-gray-500 to-slate-500", wins: 0, losses: 5 },
+      { name: "NMCC Titans", owner: "Manish Hari", color: "from-blue-500 to-cyan-500", wins: 3, losses: 2, isChampion: true },
+      { name: "Ishan Mavericks", owner: "Aman Mondal", color: "from-yellow-500 to-orange-500", wins: 4, losses: 1, isRunnerUp: true },
+      { name: "Sunny Strikers", owner: "Sunny Shaw", color: "from-red-500 to-pink-500", wins: 4, losses: 1 },
+      { name: "Maa Janki XI", owner: "Deepak", color: "from-purple-500 to-indigo-500", wins: 2, losses: 3 },
+      { name: "Neemtala Ninjas", owner: "Kaifi", color: "from-green-500 to-emerald-500", wins: 2, losses: 3 },
+      { name: "Deep Dragons", owner: "Deep Singh", color: "from-gray-500 to-slate-500", wins: 0, losses: 5 },
     ],
     "3": [],
   };
