@@ -11,16 +11,16 @@ const Seasons = () => {
     "1": {
       year: "2023",
       winner: "Sunny Strikers",
-      runnerUp: "Royal Challengers",
+      runnerUp: "NMCC Titans",
       teams: 6,
       matches: 19,
       status: "Completed",
-      topScorer: { name: "Rahul Sharma", runs: 342 },
-      topWicketTaker: { name: "Amit Singh", wickets: 18 },
-      bestMatch: "Final - Sunny Strikers vs Royal Challengers",
+      topScorer: { name: "Akshay Singh", runs: 252 },
+      topWicketTaker: { name: "Manoj Mahato", wickets: 13 },
+      bestMatch: "Neemtala Ninjas vs NMCC Titans",
       highlights: [
         "First ever NBPL season",
-        "Record 342 runs by a single player",
+        "Record 252 runs by a single player",
         "Thrilling final decided in last over",
         "6 teams battled for glory"
       ]
@@ -28,18 +28,17 @@ const Seasons = () => {
     "2": {
       year: "2024",
       winner: "NMCC Titans",
-      runnerUp: "Sunny Strikers",
+      runnerUp: "Ishan Mavericks",
       teams: 6,
       matches: 19,
       status: "Completed",
-      topScorer: { name: "Vikash Kumar", runs: 389 },
-      topWicketTaker: { name: "Deepak Roy", wickets: 22 },
-      bestMatch: "Semi-Final - NMCC Titans vs Royal Challengers",
+      topScorer: { name: "Aryan Hela", runs: 287 },
+      topWicketTaker: { name: "Suraj Mondal", wickets: 16 },
+      bestMatch: "Final - NMCC Titans vs Ishan Mavericks",
       highlights: [
         "Record-breaking viewership",
-        "New tournament high score of 189",
-        "Defending champions defeated in semis",
-        "Youngest captain lifts trophy"
+        "New tournament individual high score of 112",
+        "The previous year’s runners-up made a strong comeback and claimed the championship",
       ]
     },
     "3": {
