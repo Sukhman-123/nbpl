@@ -55,7 +55,7 @@ const Seasons = () => {
       highlights: [
         "Expanded to 8 teams",
         "Bigger prize pool",
-        "New venues confirmed",
+        "New teams being introduced",
         "Player auction in February 2026"
       ]
     },
