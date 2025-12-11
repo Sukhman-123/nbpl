@@ -31,16 +31,16 @@ const Teams = () => {
   const teams = teamsData[seasonId as keyof typeof teamsData] || [];
   const isUpcoming = seasonId === "3";
 
-  // Placeholder teams for Season 3
+  // Season 3 teams and slots
   const upcomingTeamSlots = [
-    { slot: 1, status: "Confirmed", color: "from-yellow-500 to-orange-500" },
-    { slot: 2, status: "Confirmed", color: "from-red-500 to-pink-500" },
-    { slot: 3, status: "Confirmed", color: "from-blue-500 to-cyan-500" },
-    { slot: 4, status: "Confirmed", color: "from-purple-500 to-indigo-500" },
-    { slot: 5, status: "Confirmed", color: "from-green-500 to-emerald-500" },
-    { slot: 6, status: "Confirmed", color: "from-gray-500 to-slate-500" },
-    { slot: 7, status: "New Team", color: "from-teal-500 to-cyan-500" },
-    { slot: 8, status: "New Team", color: "from-rose-500 to-red-500" },
+    { slot: 1, status: "New Team", name: "Ritesh Warriors", owner: "Naveen Gupta", color: "from-yellow-500 to-orange-500", confirmed: true },
+    { slot: 2, status: "Returning", name: "Ishan Mavericks", owner: "Aman Mondal", color: "from-red-500 to-pink-500", confirmed: true },
+    { slot: 3, status: "Returning", name: "The Janki's XI", owner: "Abhinav", color: "from-blue-500 to-cyan-500", confirmed: true },
+    { slot: 4, status: "Returning", name: "Deep Dragons", owner: "Deep Singh", color: "from-purple-500 to-indigo-500", confirmed: true },
+    { slot: 5, status: "Available", color: "from-green-500 to-emerald-500", confirmed: false },
+    { slot: 6, status: "Available", color: "from-gray-500 to-slate-500", confirmed: false },
+    { slot: 7, status: "Available", color: "from-teal-500 to-cyan-500", confirmed: false },
+    { slot: 8, status: "Available", color: "from-rose-500 to-red-500", confirmed: false },
   ];
 
   return (
@@ -74,7 +74,7 @@ const Teams = () => {
                 8 Teams Competing This Season!
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                For the first time ever, NBPL expands to 8 teams. Team names and owners will be revealed after the auction in February 2026.
+                For the first time ever, NBPL expands to 8 teams. 4 teams confirmed so far with 4 ownership slots still available!
               </p>
             </div>
 
@@ -87,27 +87,49 @@ const Teams = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${slot.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
                   <div className="relative text-center">
                     <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${slot.color} flex items-center justify-center`}>
-                      {slot.status === "New Team" ? (
-                        <Sparkles className="h-10 w-10 text-white" />
+                      {slot.confirmed ? (
+                        slot.status === "New Team" ? (
+                          <Sparkles className="h-10 w-10 text-white" />
+                        ) : (
+                          <Shield className="h-10 w-10 text-white" />
+                        )
                       ) : (
-                        <Shield className="h-10 w-10 text-white" />
+                        <HelpCircle className="h-10 w-10 text-white" />
                       )}
                     </div>
-                    <p className="text-2xl font-black text-foreground mb-1">Team {slot.slot}</p>
-                    <Badge 
-                      className={slot.status === "New Team" 
-                        ? "bg-cricket-gold/20 text-cricket-gold border-cricket-gold/30" 
-                        : "bg-primary/20 text-primary border-primary/30"
-                      }
-                    >
-                      {slot.status}
-                    </Badge>
-                    <div className="mt-4 p-3 bg-background/50 rounded-lg">
-                      <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                        <HelpCircle className="h-4 w-4" />
-                        <span className="text-sm">Owner TBA</span>
-                      </div>
-                    </div>
+                    
+                    {slot.confirmed ? (
+                      <>
+                        <p className="text-xl font-black text-foreground mb-2">{slot.name}</p>
+                        <Badge 
+                          className={slot.status === "New Team" 
+                            ? "bg-cricket-gold/20 text-cricket-gold border-cricket-gold/30 mb-3" 
+                            : "bg-primary/20 text-primary border-primary/30 mb-3"
+                          }
+                        >
+                          {slot.status}
+                        </Badge>
+                        <div className="p-3 bg-background/50 rounded-lg">
+                          <div className="flex items-center justify-center gap-2">
+                            <Crown className="h-4 w-4 text-cricket-gold" />
+                            <span className="text-sm font-medium text-foreground">{slot.owner}</span>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-2xl font-black text-foreground mb-1">Team {slot.slot}</p>
+                        <Badge className="bg-muted text-muted-foreground border-muted mb-3">
+                          Slot Available
+                        </Badge>
+                        <div className="p-3 bg-background/50 rounded-lg">
+                          <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                            <HelpCircle className="h-4 w-4" />
+                            <span className="text-sm">Owner TBA</span>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </Card>
               ))}
