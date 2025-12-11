@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CopyButton } from "@/components/CopyButton";
+import AuctionCountdown from "@/components/AuctionCountdown";
 import nbplLogo from "@/assets/nbpl-logo.png";
 import cricketHero from "@/assets/cricket-hero.jpg";
 import { Trophy, Users, Calendar, MapPin, Mail } from "lucide-react";
@@ -139,10 +140,15 @@ const Index = () => {
                 >
                   REGISTER YOUR TEAM NOW
                 </button>
-              </div>
+            </div>
+
+            {/* Auction Countdown */}
+            <div className="mt-8 w-full max-w-3xl">
+              <AuctionCountdown />
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Tournament Details */}
