@@ -39,6 +39,7 @@ const Seasons = () => {
         "Record-breaking viewership",
         "New tournament individual high score of 112",
         "The previous year’s runners-up made a strong comeback and claimed the championship",
+        "Bigger and better rewards and recognition for top performers."
       ]
     },
     "3": {
