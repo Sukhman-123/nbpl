@@ -9,7 +9,7 @@ const Seasons = () => {
 
   const seasonData = {
     "1": {
-      year: "2023",
+      year: "2023-24",
       winner: "Sunny Strikers",
       runnerUp: "NMCC Titans",
       teams: 6,
@@ -26,7 +26,7 @@ const Seasons = () => {
       ]
     },
     "2": {
-      year: "2024",
+      year: "2024-25",
       winner: "NMCC Titans",
       runnerUp: "Ishan Mavericks",
       teams: 6,
