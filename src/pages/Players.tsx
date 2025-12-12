@@ -90,7 +90,7 @@ const Players = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                   <div className="p-4 bg-background/50 rounded-xl border border-border">
-                    <p className="text-3xl font-black text-primary">80+</p>
+                    <p className="text-3xl font-black text-primary">110+</p>
                     <p className="text-sm text-muted-foreground">Expected Players</p>
                   </div>
                   <div className="p-4 bg-background/50 rounded-xl border border-border">
