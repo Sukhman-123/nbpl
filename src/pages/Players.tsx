@@ -20,7 +20,7 @@ const Players = () => {
       { name: "Rahul Shaw", role: "Batsman", team: "Aanvi Warriors", runs: 153 },
     ],
     "2": [
-      { name: "Aryan Hela", role: "All-Rounder", team: "NMCC Titans", runs: 287, isTopPerformer: true, badge: "Orange Cap" },
+      { name: "Aryan Hela", role: "All-Rounder", team: "NMCC Titans", runs: 287, wickets: 16, isTopPerformer: true, badge: "Orange Cap" },
       { name: "Suraj Mondal", role: "Bowler", team: "Sunny Strikers", wickets: 16, isTopPerformer: true, badge: "Purple Cap" },
       { name: "Abid Hussain", role: "Batsman", team: "NMCC Titans", runs: 240 },
       { name: "Anand Chaudhary", role: "All-rounder", team: "Maa Janki XI", runs: 210, wickets: 2 },
