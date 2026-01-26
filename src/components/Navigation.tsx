@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -115,6 +116,16 @@ export const Navigation = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <Link to="/auction">
+              <Button variant="ghost" className="font-medium relative">
+                <Gavel className="h-4 w-4 mr-1" />
+                Auction
+                <Badge className="absolute -top-1 -right-2 px-1.5 py-0.5 text-[10px] bg-cricket-orange text-white">
+                  LIVE
+                </Badge>
+              </Button>
+            </Link>
 
             <Link to="/gallery">
               <Button variant="ghost" className="font-medium">
@@ -235,6 +246,16 @@ export const Navigation = () => {
                 </div>
               )}
             </div>
+
+            <Link
+              to="/auction"
+              className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-accent text-cricket-orange font-semibold"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Gavel className="h-4 w-4" />
+              Auction
+              <Badge className="px-1.5 py-0.5 text-[10px] bg-cricket-orange text-white">LIVE</Badge>
+            </Link>
 
             <Link
               to="/gallery"

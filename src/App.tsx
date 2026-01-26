@@ -10,6 +10,7 @@ import Seasons from "./pages/Seasons";
 import Players from "./pages/Players";
 import Teams from "./pages/Teams";
 import Gallery from "./pages/Gallery";
+import Auction from "./pages/Auction";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/players/:seasonId" element={<Players />} />
           <Route path="/teams/:seasonId" element={<Teams />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/auction" element={<Auction />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
