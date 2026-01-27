@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Gavel } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, Gavel, LogIn, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -8,8 +8,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useAuth } from "@/contexts/AuthContext";
 import nbplLogo from "@/assets/nbpl-logo.png";
 
 const seasons = [
@@ -21,9 +23,16 @@ const seasons = [
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { user, signOut, loading } = useAuth();
+  const navigate = useNavigate();
 
   const toggleDropdown = (dropdown: string) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
   };
 
   // Prevent body scroll when mobile menu is open
@@ -140,6 +149,37 @@ export const Navigation = () => {
             </Link>
 
             <ThemeToggle />
+
+            {/* Auth Button */}
+            {!loading && (
+              user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <User className="h-4 w-4" />
+                      <span className="max-w-[100px] truncate">{user.email?.split('@')[0]}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem className="text-xs text-muted-foreground">
+                      {user.email}
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link to="/auth">
+                  <Button size="sm" className="gap-2 bg-gradient-to-r from-primary to-cricket-orange">
+                    <LogIn className="h-4 w-4" />
+                    Sign In
+                  </Button>
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -272,6 +312,35 @@ export const Navigation = () => {
             >
               Contact Us
             </Link>
+
+            {/* Mobile Auth */}
+            {!loading && (
+              <div className="px-4 py-2 border-t border-border mt-2 pt-4">
+                {user ? (
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground truncate">{user.email}</p>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start text-destructive"
+                      onClick={() => {
+                        handleSignOut();
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </Button>
+                  </div>
+                ) : (
+                  <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                    <Button className="w-full gap-2 bg-gradient-to-r from-primary to-cricket-orange">
+                      <LogIn className="h-4 w-4" />
+                      Sign In
+                    </Button>
+                  </Link>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
