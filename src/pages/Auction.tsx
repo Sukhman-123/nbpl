@@ -7,7 +7,8 @@ import { PlayerPool } from "@/components/auction/PlayerPool";
 import { SoldPlayersLog } from "@/components/auction/SoldPlayersLog";
 import { useAuctionState } from "@/hooks/useAuctionState";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Gavel, Users, Trophy, History } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Gavel, Users, Trophy, History, ArrowLeft } from "lucide-react";
 
 const Auction = () => {
   const auctionState = useAuctionState();
@@ -21,11 +22,23 @@ const Auction = () => {
         <AuctionHero onStart={auctionState.startAuction} />
       ) : (
         <div className="container mx-auto px-4 py-6">
+          {/* Back Button */}
+          <div className="mb-4">
+            <Button
+              variant="outline"
+              onClick={auctionState.stopAuction}
+              className="gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Start
+            </Button>
+          </div>
+
           {/* Header Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl p-4 border border-primary/30">
               <p className="text-sm text-muted-foreground">Total Players</p>
-              <p className="text-3xl font-black text-primary">108</p>
+              <p className="text-3xl font-black text-primary">107</p>
             </div>
             <div className="bg-gradient-to-br from-cricket-green/20 to-cricket-green/5 rounded-xl p-4 border border-cricket-green/30">
               <p className="text-sm text-muted-foreground">Sold</p>
