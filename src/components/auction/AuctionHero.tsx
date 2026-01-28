@@ -49,8 +49,8 @@ export const AuctionHero = ({ onStart }: AuctionHeroProps) => {
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
             Where legends are made and teams are built. 
-            <span className="text-primary font-semibold"> 108 players</span>, 
-            <span className="text-cricket-orange font-semibold"> 8 teams</span>, 
+            <span className="text-primary font-semibold"> 107 players</span>, 
+            <span className="text-cricket-orange font-semibold"> 8 teams</span>,
             <span className="text-cricket-gold font-semibold"> 1 champion</span>.
           </p>
 

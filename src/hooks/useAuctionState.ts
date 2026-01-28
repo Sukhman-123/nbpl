@@ -53,6 +53,10 @@ export const useAuctionState = () => {
     setState(prev => ({ ...prev, status: "in_progress" }));
   }, []);
 
+  const stopAuction = useCallback(() => {
+    setState(prev => ({ ...prev, status: "not_started", currentPlayer: null, currentBid: 0, currentBidder: null }));
+  }, []);
+
   const pauseAuction = useCallback(() => {
     setState(prev => ({ ...prev, status: "paused" }));
   }, []);
@@ -204,6 +208,7 @@ export const useAuctionState = () => {
   return {
     ...state,
     startAuction,
+    stopAuction,
     pauseAuction,
     resumeAuction,
     selectPlayer,
