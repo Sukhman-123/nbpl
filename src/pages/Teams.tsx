@@ -35,12 +35,12 @@ const Teams = () => {
   const upcomingTeamSlots = [
     { slot: 1, status: "New Team", name: "Ritesh Warriors", owner: "Naveen Gupta", color: "from-yellow-500 to-orange-500", confirmed: true },
     { slot: 2, status: "Returning", name: "Ishan Mavericks", owner: "Aman Mondal", color: "from-red-500 to-pink-500", confirmed: true },
-    { slot: 3, status: "Returning", name: "The Janki's XI", owner: "Abhinav", color: "from-blue-500 to-cyan-500", confirmed: true },
+    { slot: 3, status: "Returning", name: "Maa Janki's Publications", owner: "Abhinash Singh", color: "from-blue-500 to-cyan-500", confirmed: true },
     { slot: 4, status: "Returning", name: "Deep Dragons", owner: "Deep Singh", color: "from-purple-500 to-indigo-500", confirmed: true },
-    { slot: 5, status: "Available", color: "from-green-500 to-emerald-500", confirmed: false },
-    { slot: 6, status: "Available", color: "from-gray-500 to-slate-500", confirmed: false },
-    { slot: 7, status: "Available", color: "from-teal-500 to-cyan-500", confirmed: false },
-    { slot: 8, status: "Available", color: "from-rose-500 to-red-500", confirmed: false },
+    { slot: 5, status: "New Team", name: "Rahul Strikers", owner: "Rahul Tiwari", color: "from-green-500 to-emerald-500", confirmed: false },
+    { slot: 6, status: "New Team", name: "Prince XI", owner: "Prince", color: "from-gray-500 to-slate-500", confirmed: false },
+    { slot: 7, status: "Returning", name: "NMCC Titans", owner: "Naresh and Gopi Hela", color: "from-teal-500 to-cyan-500", confirmed: false },
+    { slot: 8, status: "New Team", name: "Abhinav Cricket Crushers", owner: "Rahul Nayak", color: "from-rose-500 to-red-500", confirmed: false },
   ];
 
   return (
