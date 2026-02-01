@@ -14,7 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      auction_state: {
+        Row: {
+          created_at: string
+          current_bid: number | null
+          current_bidder_team_id: number | null
+          current_player_id: number | null
+          id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_bid?: number | null
+          current_bidder_team_id?: number | null
+          current_player_id?: number | null
+          id?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_bid?: number | null
+          current_bidder_team_id?: number | null
+          current_player_id?: number | null
+          id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      sold_players: {
+        Row: {
+          base_price: number
+          category: string
+          id: string
+          photo_url: string | null
+          player_id: number
+          player_name: string
+          sold_at: string
+          sold_price: number
+          style: string
+          team_id: number
+          team_name: string
+        }
+        Insert: {
+          base_price: number
+          category: string
+          id?: string
+          photo_url?: string | null
+          player_id: number
+          player_name: string
+          sold_at?: string
+          sold_price: number
+          style: string
+          team_id: number
+          team_name: string
+        }
+        Update: {
+          base_price?: number
+          category?: string
+          id?: string
+          photo_url?: string | null
+          player_id?: number
+          player_name?: string
+          sold_at?: string
+          sold_price?: number
+          style?: string
+          team_id?: number
+          team_name?: string
+        }
+        Relationships: []
+      }
+      team_purses: {
+        Row: {
+          color: string
+          created_at: string
+          id: string
+          purse: number
+          short_name: string
+          team_id: number
+          team_name: string
+          updated_at: string
+        }
+        Insert: {
+          color: string
+          created_at?: string
+          id?: string
+          purse?: number
+          short_name: string
+          team_id: number
+          team_name: string
+          updated_at?: string
+        }
+        Update: {
+          color?: string
+          created_at?: string
+          id?: string
+          purse?: number
+          short_name?: string
+          team_id?: number
+          team_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
