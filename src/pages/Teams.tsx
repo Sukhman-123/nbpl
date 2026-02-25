@@ -2,12 +2,13 @@ import { useParams } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Trophy, Crown, Shield, Sparkles, HelpCircle } from "lucide-react";
+import { Users, Trophy, Crown, Shield, Sparkles } from "lucide-react";
+import { season3Results } from "@/data/season3Results";
 
 const Teams = () => {
   const { seasonId } = useParams();
 
-  // Placeholder team data - fictional but realistic
+  // Placeholder team data for past seasons
   const teamsData: Record<string, { name: string; owner: string; color: string; wins: number; losses: number; isChampion?: boolean; isRunnerUp?: boolean }[]> = {
     "1": [
       { name: "Sunny Strikers", owner: "Sunny Shaw", color: "from-yellow-500 to-orange-500", wins: 4, losses: 1, isChampion: true },
@@ -25,23 +26,10 @@ const Teams = () => {
       { name: "Neemtala Ninjas", owner: "Kaifi", color: "from-green-500 to-emerald-500", wins: 2, losses: 3 },
       { name: "Deep Dragons", owner: "Deep Singh", color: "from-gray-500 to-slate-500", wins: 0, losses: 5 },
     ],
-    "3": [],
   };
 
+  const isSeason3 = seasonId === "3";
   const teams = teamsData[seasonId as keyof typeof teamsData] || [];
-  const isUpcoming = seasonId === "3";
-
-  // Season 3 teams and slots
-  const upcomingTeamSlots = [
-    { slot: 1, status: "New Team", name: "Ritesh Warriors", owner: "Naveen Gupta", color: "from-yellow-500 to-orange-500", confirmed: true },
-    { slot: 2, status: "Returning", name: "Ishan Mavericks", owner: "Aman Mondal", color: "from-red-500 to-pink-500", confirmed: true },
-    { slot: 3, status: "Returning", name: "Maa Janki's Publications", owner: "Abhinash Singh", color: "from-blue-500 to-cyan-500", confirmed: true },
-    { slot: 4, status: "Returning", name: "Deep Dragons", owner: "Deep Singh", color: "from-purple-500 to-indigo-500", confirmed: true },
-    { slot: 5, status: "New Team", name: "Rahul Strikers", owner: "Rahul Tiwari", color: "from-green-500 to-emerald-500", confirmed: false },
-    { slot: 6, status: "New Team", name: "Prince XI", owner: "Prince", color: "from-gray-500 to-slate-500", confirmed: false },
-    { slot: 7, status: "Returning", name: "NMCC Titans", owner: "Naresh and Gopi Hela", color: "from-teal-500 to-cyan-500", confirmed: false },
-    { slot: 8, status: "New Team", name: "Abhinav Cricket Crushers", owner: "Rahul Nayak", color: "from-rose-500 to-red-500", confirmed: false },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -56,100 +44,104 @@ const Teams = () => {
               Season {seasonId}
             </Badge>
             <h1 className="text-5xl md:text-7xl font-black text-foreground mb-2">
-              TEAMS & OWNERS
+              TEAMS & SQUADS
             </h1>
             <p className="text-xl text-muted-foreground font-medium">
-              The Powerhouses of NBPL
+              {isSeason3 ? "Auction Results — 14 Feb 2026" : "The Powerhouses of NBPL"}
             </p>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        {isUpcoming ? (
-          /* Upcoming Season - Team Slots */
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                8 Teams Competing This Season!
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                For the first time ever, NBPL expands to 8 teams. 4 teams confirmed so far with 4 ownership slots still available!
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {upcomingTeamSlots.map((slot) => (
-                <Card 
-                  key={slot.slot}
-                  className="p-6 bg-card border-border hover:border-primary/50 transition-all hover:scale-105 overflow-hidden relative group"
+        {isSeason3 ? (
+          /* Season 3 - Show full auction rosters */
+          <div className="space-y-10">
+            {season3Results.map((team) => (
+              <Card key={team.teamId} className="overflow-hidden border-border">
+                {/* Team Header */}
+                <div 
+                  className="p-6 flex flex-col sm:flex-row items-center gap-4"
+                  style={{ backgroundColor: `${team.color}15` }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${slot.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
-                  <div className="relative text-center">
-                    <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${slot.color} flex items-center justify-center`}>
-                      {slot.confirmed ? (
-                        slot.status === "New Team" ? (
-                          <Sparkles className="h-10 w-10 text-white" />
-                        ) : (
-                          <Shield className="h-10 w-10 text-white" />
-                        )
-                      ) : (
-                        <HelpCircle className="h-10 w-10 text-white" />
-                      )}
-                    </div>
-                    
-                    {slot.confirmed ? (
-                      <>
-                        <p className="text-xl font-black text-foreground mb-2">{slot.name}</p>
-                        <Badge 
-                          className={slot.status === "New Team" 
-                            ? "bg-cricket-gold/20 text-cricket-gold border-cricket-gold/30 mb-3" 
-                            : "bg-primary/20 text-primary border-primary/30 mb-3"
-                          }
-                        >
-                          {slot.status}
-                        </Badge>
-                        <div className="p-3 bg-background/50 rounded-lg">
-                          <div className="flex items-center justify-center gap-2">
-                            <Crown className="h-4 w-4 text-cricket-gold" />
-                            <span className="text-sm font-medium text-foreground">{slot.owner}</span>
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-2xl font-black text-foreground mb-1">Team {slot.slot}</p>
-                        <Badge className="bg-muted text-muted-foreground border-muted mb-3">
-                          Slot Available
-                        </Badge>
-                        <div className="p-3 bg-background/50 rounded-lg">
-                          <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                            <HelpCircle className="h-4 w-4" />
-                            <span className="text-sm">Owner TBA</span>
-                          </div>
-                        </div>
-                      </>
-                    )}
+                  <div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: team.color }}
+                  >
+                    <span className="text-white font-black text-lg">{team.shortName}</span>
                   </div>
-                </Card>
-              ))}
-            </div>
+                  <div className="text-center sm:text-left flex-1">
+                    <h2 className="text-2xl font-black text-foreground">{team.teamName}</h2>
+                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-1">
+                      <span className="text-sm text-muted-foreground flex items-center gap-1">
+                        <Crown className="h-3.5 w-3.5" /> {team.owner}
+                      </span>
+                      <Badge variant="outline" className="text-xs">
+                        {team.players.length} Players
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-2xl font-black text-foreground">₹{team.totalSpent.toLocaleString()}</p>
+                    <p className="text-xs text-muted-foreground">Total Spent</p>
+                  </div>
+                </div>
 
-            <Card className="mt-12 p-8 bg-gradient-to-r from-primary/10 to-cricket-orange/10 border-primary/30">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="bg-primary/20 p-4 rounded-full">
-                  <Crown className="h-12 w-12 text-primary" />
+                {/* Players Table */}
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/30">
+                        <th className="text-left px-4 py-3 font-semibold text-muted-foreground">#</th>
+                        <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Player</th>
+                        <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Role</th>
+                        <th className="text-left px-4 py-3 font-semibold text-muted-foreground">Category</th>
+                        <th className="text-right px-4 py-3 font-semibold text-muted-foreground">Base</th>
+                        <th className="text-right px-4 py-3 font-semibold text-muted-foreground">Sold</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {team.players
+                        .sort((a, b) => b.soldPrice - a.soldPrice)
+                        .map((player, idx) => (
+                          <tr key={player.playerNo} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
+                            <td className="px-4 py-3 text-muted-foreground">{idx + 1}</td>
+                            <td className="px-4 py-3 font-medium text-foreground">{player.name}</td>
+                            <td className="px-4 py-3">
+                              <Badge 
+                                variant="outline" 
+                                className={
+                                  player.style === "Batsman" 
+                                    ? "border-cricket-blue/50 text-cricket-blue" 
+                                    : player.style === "Bowler" 
+                                    ? "border-cricket-orange/50 text-cricket-orange" 
+                                    : "border-primary/50 text-primary"
+                                }
+                              >
+                                {player.style}
+                              </Badge>
+                            </td>
+                            <td className="px-4 py-3">
+                              <Badge 
+                                variant="secondary"
+                                className={
+                                  player.address === "Foreign" 
+                                    ? "bg-cricket-gold/20 text-cricket-gold" 
+                                    : "bg-muted text-muted-foreground"
+                                }
+                              >
+                                {player.address}
+                              </Badge>
+                            </td>
+                            <td className="px-4 py-3 text-right text-muted-foreground">₹{player.basePrice}</td>
+                            <td className="px-4 py-3 text-right font-bold text-foreground">₹{player.soldPrice.toLocaleString()}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
                 </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Want to Own a Team?
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Team ownership slots are still available for Season 3. Contact us to become a team owner and lead your squad to victory!
-                  </p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            ))}
           </div>
         ) : (
           /* Past Seasons - Show Teams */
