@@ -13,7 +13,7 @@ import Players from "./pages/Players";
 import Teams from "./pages/Teams";
 import Gallery from "./pages/Gallery";
 import Auction from "./pages/Auction";
-import PublicAuction from "./pages/PublicAuction";
+
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
@@ -34,7 +34,7 @@ const App = () => (
               <Route path="/players/:seasonId" element={<Players />} />
               <Route path="/teams/:seasonId" element={<Teams />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/live-auction" element={<PublicAuction />} />
+              {/* Live auction removed - auction completed */}
               <Route path="/auth" element={<Auth />} />
               <Route
                 path="/auction"

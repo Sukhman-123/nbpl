@@ -1,46 +1,18 @@
 import { Navigation } from "@/components/Navigation";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { CopyButton } from "@/components/CopyButton";
-import AuctionCountdown from "@/components/AuctionCountdown";
+import { Badge } from "@/components/ui/badge";
 import nbplLogo from "@/assets/nbpl-logo.png";
 import cricketHero from "@/assets/cricket-hero.jpg";
-import { Trophy, Users, Calendar, MapPin, Mail } from "lucide-react";
+import { Trophy, Users, Calendar, MapPin, Mail, Gavel, Star, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { season3Results, topAuctionPicks } from "@/data/season3Results";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
-      {/* Mobile Navigation Bar - Visible only on mobile */}
-      <div className="lg:hidden bg-card border-b border-border sticky top-0 z-40">
-        <div className="container mx-auto px-2 py-3">
-          <div className="flex justify-around items-center gap-1">
-            <a 
-              href="/" 
-              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
-            >
-              <Trophy className="w-5 h-5 text-primary mb-1" />
-              <span className="text-xs font-medium text-foreground">Home</span>
-            </a>
-            <a 
-              href="/gallery" 
-              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
-            >
-              <Users className="w-5 h-5 text-primary mb-1" />
-              <span className="text-xs font-medium text-foreground">Gallery</span>
-            </a>
-            <a 
-              href="/contact" 
-              className="flex flex-col items-center px-2 py-1 rounded-lg hover:bg-primary/10 transition-colors flex-1"
-            >
-              <Mail className="w-5 h-5 text-primary mb-1" />
-              <span className="text-xs font-medium text-foreground">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
       
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -67,88 +39,67 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-card/90 backdrop-blur-sm border-2 border-cricket-orange rounded-2xl p-8 md:p-12 max-w-3xl w-full shadow-glow-secondary">
-            <div className="flex justify-center mb-5 w-full px-2">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSemtChWA7Tuz_KGNkWOwVzCkpLhQY0EuIPnRlAPSCSVl37nFA/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full max-w-md"
-              >
-                <Button 
-                  variant="tournament" 
-                  size="lg" 
-                  className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-12 py-3 sm:py-4 md:py-6 h-auto w-full whitespace-normal text-center leading-tight"
-                >
-                  CLICK FOR PLAYER REGISTRATION
-                </Button>
-              </a>
-            </div>
-              <p className="text-xl md:text-2xl text-foreground font-semibold mb-6">
-                Limited Spots Available
-              </p>
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="bg-primary/20 px-6 py-3 rounded-lg border border-primary">
-                  <p className="text-4xl md:text-6xl font-black text-primary">8</p>
-                  <p className="text-sm text-muted-foreground font-medium">TEAMS ONLY</p>
-                </div>
-              </div>
-              
-              <div className="bg-background/50 backdrop-blur-sm rounded-xl p-6 mb-6 border border-border">
-                <h3 className="text-lg font-bold text-foreground mb-4 text-center">Contact for Registration</h3>
-                
-                <div className="mb-4 flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-primary" />
-                    <p className="font-bold text-foreground">Official Email</p>
-                  </div>
-                  <div className="flex items-center mt-1">
-                    <p className="text-muted-foreground text-sm">nbucplcricket@gmail.com</p>
-                    <CopyButton text="nbucplcricket@gmail.com" label="Email" />
-                  </div>
-                </div>
-            
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
-                    <p className="font-bold text-foreground text-lg">Nicky</p>
-                    <div className="flex items-center">
-                      <p className="text-muted-foreground text-sm">7001335425</p>
-                      <CopyButton text="7001335425" label="Phone" />
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
-                    <p className="font-bold text-foreground text-lg">Ricky</p>
-                    <div className="flex items-center">
-                      <p className="text-muted-foreground text-sm">6297984477</p>
-                      <CopyButton text="6297984477" label="Phone" />
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center p-3 bg-card/50 rounded-lg border border-border/50">
-                    <p className="font-bold text-foreground text-lg">Sukhman</p>
-                    <div className="flex items-center">
-                      <p className="text-muted-foreground text-sm">8972850560</p>
-                      <CopyButton text="8972850560" label="Phone" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <div className="flex justify-center">
-                <button
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeaPIJixU239lXCGyC-shufw5LdiwkCgkFU7glx4p2fJbm3uA/viewform?usp=publish-editor', '_blank')}
-                  className="px-8 py-4 text-2xl md:text-3xl font-bold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors shadow-lg hover:shadow-xl cursor-pointer"
-                >
-                  REGISTER YOUR TEAM NOW
-                </button>
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              <Badge className="bg-primary/20 text-primary border-primary/30 text-sm px-4 py-1.5">
+                <Gavel className="w-4 h-4 mr-1.5" />
+                Auction Completed — 14 Feb 2026
+              </Badge>
+              <Badge className="bg-cricket-orange/20 text-cricket-orange border-cricket-orange/30 text-sm px-4 py-1.5">
+                <Users className="w-4 h-4 mr-1.5" />
+                8 Teams • 112 Players
+              </Badge>
             </div>
 
-            {/* Auction Countdown */}
-            <div className="mt-8 w-full max-w-3xl">
-              <AuctionCountdown />
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              <Link to="/teams/3">
+                <Button size="lg" className="gap-2 bg-gradient-to-r from-primary to-cricket-orange">
+                  View Team Squads
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link to="/seasons/3">
+                <Button size="lg" variant="outline" className="gap-2">
+                  Season 3 Details
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Top Auction Picks */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <Star className="w-6 h-6 text-cricket-gold" />
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+            Top Auction Picks
+          </h2>
+          <Star className="w-6 h-6 text-cricket-gold" />
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {topAuctionPicks.slice(0, 5).map((player, idx) => (
+            <Card 
+              key={player.playerNo}
+              className="p-4 bg-gradient-card border-primary/20 hover:border-primary/50 transition-all hover:scale-105"
+            >
+              <div className="text-center space-y-2">
+                <div 
+                  className="w-12 h-12 mx-auto rounded-full flex items-center justify-center text-white font-black text-lg"
+                  style={{ backgroundColor: player.teamColor }}
+                >
+                  {idx + 1}
+                </div>
+                <p className="font-bold text-foreground text-sm">{player.name}</p>
+                <Badge variant="outline" className="text-xs">
+                  {player.style}
+                </Badge>
+                <p className="text-2xl font-black text-primary">₹{player.soldPrice.toLocaleString()}</p>
+                <p className="text-xs text-muted-foreground">{player.teamName}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
 
       {/* Tournament Details */}
@@ -174,7 +125,7 @@ const Index = () => {
                 <Users className="w-8 h-8 text-cricket-orange" />
               </div>
               <h4 className="text-xl font-bold text-foreground">8 Teams</h4>
-              <p className="text-muted-foreground">Limited slots available</p>
+              <p className="text-muted-foreground">Biggest season ever</p>
             </div>
           </Card>
 
@@ -184,7 +135,7 @@ const Index = () => {
                 <Calendar className="w-8 h-8 text-cricket-blue" />
               </div>
               <h4 className="text-xl font-bold text-foreground">Coming Soon</h4>
-              <p className="text-muted-foreground">Dates to be announced</p>
+              <p className="text-muted-foreground">Match dates to be announced</p>
             </div>
           </Card>
 
@@ -200,14 +151,40 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Teams Overview */}
+      <div className="container mx-auto px-4 py-8">
+        <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 text-foreground">
+          Season 3 Teams
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {season3Results.map((team) => (
+            <Link to="/teams/3" key={team.teamId}>
+              <Card className="p-4 bg-card border-border hover:border-primary/50 transition-all hover:scale-105 cursor-pointer">
+                <div className="text-center space-y-2">
+                  <div 
+                    className="w-12 h-12 mx-auto rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: team.color }}
+                  >
+                    <span className="text-white font-bold text-sm">{team.shortName}</span>
+                  </div>
+                  <p className="font-bold text-foreground text-sm">{team.teamName}</p>
+                  <p className="text-xs text-muted-foreground">{team.players.length} Players</p>
+                  <p className="text-xs text-primary font-semibold">Spent: ₹{team.totalSpent.toLocaleString()}</p>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Call to Action */}
       <div className="bg-gradient-hero py-16">
         <div className="container mx-auto px-4 text-center space-y-6">
           <h3 className="text-3xl md:text-5xl font-black text-foreground">
-            Don't Miss Your Chance!
+            Season 3 Is Coming!
           </h3>
           <p className="text-xl text-foreground/90 max-w-2xl mx-auto">
-            Registration will open soon. Soon be part of the most electrifying cricket tournament in Burnpur!
+            The auction is complete. 8 teams are ready. Stay tuned for match schedules and the most electrifying cricket tournament in Burnpur!
           </p>
           <div className="max-w-4xl mx-auto">
             <AspectRatio ratio={16 / 9}>

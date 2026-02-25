@@ -48,15 +48,15 @@ const Seasons = () => {
       runnerUp: "TBD",
       teams: 8,
       matches: "TBA",
-      status: "Upcoming",
+      status: "Auction Complete",
       topScorer: { name: "—", runs: "—" },
       topWicketTaker: { name: "—", wickets: "—" },
-      bestMatch: "Season not started",
+      bestMatch: "Season not started yet",
       highlights: [
         "Expanded to 8 teams",
         "Bigger prize pool",
-        "New teams being introduced",
-        "Player auction in February 2026"
+        "Auction held on 14 Feb 2026",
+        "112 players drafted across 8 teams"
       ]
     },
   };

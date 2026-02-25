@@ -127,12 +127,9 @@ export const Navigation = () => {
             </DropdownMenu>
 
             <Link to="/auction">
-              <Button variant="ghost" className="font-medium relative">
+              <Button variant="ghost" className="font-medium">
                 <Gavel className="h-4 w-4 mr-1" />
                 Auction
-                <Badge className="absolute -top-1 -right-2 px-1.5 py-0.5 text-[10px] bg-cricket-orange text-white">
-                  LIVE
-                </Badge>
               </Button>
             </Link>
 
@@ -289,12 +286,11 @@ export const Navigation = () => {
 
             <Link
               to="/auction"
-              className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-accent text-cricket-orange font-semibold"
+              className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-accent font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
               <Gavel className="h-4 w-4" />
               Auction
-              <Badge className="px-1.5 py-0.5 text-[10px] bg-cricket-orange text-white">LIVE</Badge>
             </Link>
 
             <Link
